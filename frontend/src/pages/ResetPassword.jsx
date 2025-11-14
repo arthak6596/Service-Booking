@@ -24,7 +24,7 @@ const ResetPassword = () => {
 
     try {
       const response = await axios.post(
-        `http://localhost:5000/api/auth/reset-password/${token}`,
+        `https://service-booking-backend-3brg.onrender.com/api/auth/reset-password/${token}`,
         payload
       );
       console.log("Password reset successfully:", response.data);

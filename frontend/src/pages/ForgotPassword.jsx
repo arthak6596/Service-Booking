@@ -10,7 +10,7 @@ const ForgotPassword = () => {
     console.log('Login attempted with:', { email });
     const payload = {email}
     try{
-      const resposne = await axios.post("http://localhost:5000/api/auth/forgot-password",payload)
+      const resposne = await axios.post("https://service-booking-backend-3brg.onrender.com/api/auth/forgot-password",payload)
       console.log("Email is sent Successfully",resposne.data)
       alert("Reset link is send to your Mail")
     }catch(error){

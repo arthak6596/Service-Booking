@@ -14,7 +14,7 @@ const Login = () => {
     const payload = {email,password}
 
     try{
-      const response = await axios.post("http://localhost:5000/api/auth/login",payload)
+      const response = await axios.post("https://service-booking-backend-3brg.onrender.com/api/auth/login",payload)
       console.log("Login Successful")
       const { token, user } = response.data;
 

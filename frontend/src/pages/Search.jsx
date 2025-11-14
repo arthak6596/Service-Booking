@@ -21,7 +21,7 @@ export default function SearchPage() {
   useEffect(() => {
     const fetchServices = async () => {
       try {
-        const response = await axios.get('http://localhost:5000/services');
+        const response = await axios.get('https://service-booking-backend-3brg.onrender.com/services');
         setServices(response.data.services);
         setLoading(false);
       } catch (err) {
@@ -37,7 +37,7 @@ export default function SearchPage() {
     const fetchUserRequests = async () => {
       if (!token) return;
       try {
-        const response = await axios.get('http://localhost:5000/request/user', {
+        const response = await axios.get('https://service-booking-backend-3brg.onrender.com/request/user', {
           headers: { Authorization: `Bearer ${token}` }
         });
         // add requested services to cart
@@ -75,7 +75,7 @@ export default function SearchPage() {
     e.preventDefault();
     try {
       const response = await axios.post(
-        `http://localhost:5000/services/request/${selectedService._id}`,
+        `https://service-booking-backend-3brg.onrender.com/services/request/${selectedService._id}`,
         {
           address: formData.address,
           scheduledDate: formData.date,
